@@ -1,0 +1,14 @@
+version: "3.6"
+
+networks:
+  gateway:
+    external: true
+    name: "gateway"
+
+services:
+  it-tools:
+    container_name: it-tools
+    restart: unless-stopped
+    image: corentinth/it-tools:latest
+    networks:
+      - "gateway"
